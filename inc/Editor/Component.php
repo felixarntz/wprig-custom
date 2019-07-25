@@ -47,6 +47,61 @@ class Component implements Component_Interface {
 		// Add support for wide-aligned images.
 		add_theme_support( 'align-wide' );
 
+		$editor_color_palette = [
+			[
+				'name'  => __( 'Primary', 'wp-rig' ),
+				'slug'  => 'theme-primary',
+				'color' => '#e36d60',
+			],
+			[
+				'name'  => __( 'Secondary', 'wp-rig' ),
+				'slug'  => 'theme-secondary',
+				'color' => '#41848f',
+			],
+			[
+				'name'  => __( 'Red', 'wp-rig' ),
+				'slug'  => 'theme-red',
+				'color' => '#C0392B',
+			],
+			[
+				'name'  => __( 'Green', 'wp-rig' ),
+				'slug'  => 'theme-green',
+				'color' => '#27AE60',
+			],
+			[
+				'name'  => __( 'Blue', 'wp-rig' ),
+				'slug'  => 'theme-blue',
+				'color' => '#2980B9',
+			],
+			[
+				'name'  => __( 'Yellow', 'wp-rig' ),
+				'slug'  => 'theme-yellow',
+				'color' => '#F1C40F',
+			],
+			[
+				'name'  => __( 'Black', 'wp-rig' ),
+				'slug'  => 'theme-black',
+				'color' => '#1C2833',
+			],
+			[
+				'name'  => __( 'Grey', 'wp-rig' ),
+				'slug'  => 'theme-grey',
+				'color' => '#95A5A6',
+			],
+			[
+				'name'  => __( 'White', 'wp-rig' ),
+				'slug'  => 'theme-white',
+				'color' => '#ECF0F1',
+			],
+		];
+
+		/**
+		 * Filters the list of custom theme colors to make available in the block editor.
+		 *
+		 * @param array $editor_color_palette List of custom theme color data sets.
+		 */
+		$editor_color_palette = apply_filters( 'wprig_editor_color_palette', $editor_color_palette );
+
 		/**
 		 * Add support for color palettes.
 		 *
@@ -60,53 +115,7 @@ class Component implements Component_Interface {
 		 */
 		add_theme_support(
 			'editor-color-palette',
-			[
-				[
-					'name'  => __( 'Primary', 'wp-rig' ),
-					'slug'  => 'theme-primary',
-					'color' => '#e36d60',
-				],
-				[
-					'name'  => __( 'Secondary', 'wp-rig' ),
-					'slug'  => 'theme-secondary',
-					'color' => '#41848f',
-				],
-				[
-					'name'  => __( 'Red', 'wp-rig' ),
-					'slug'  => 'theme-red',
-					'color' => '#C0392B',
-				],
-				[
-					'name'  => __( 'Green', 'wp-rig' ),
-					'slug'  => 'theme-green',
-					'color' => '#27AE60',
-				],
-				[
-					'name'  => __( 'Blue', 'wp-rig' ),
-					'slug'  => 'theme-blue',
-					'color' => '#2980B9',
-				],
-				[
-					'name'  => __( 'Yellow', 'wp-rig' ),
-					'slug'  => 'theme-yellow',
-					'color' => '#F1C40F',
-				],
-				[
-					'name'  => __( 'Black', 'wp-rig' ),
-					'slug'  => 'theme-black',
-					'color' => '#1C2833',
-				],
-				[
-					'name'  => __( 'Grey', 'wp-rig' ),
-					'slug'  => 'theme-grey',
-					'color' => '#95A5A6',
-				],
-				[
-					'name'  => __( 'White', 'wp-rig' ),
-					'slug'  => 'theme-white',
-					'color' => '#ECF0F1',
-				],
-			]
+			$editor_color_palette
 		);
 
 		/*
