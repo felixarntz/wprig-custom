@@ -106,16 +106,6 @@ class Component implements Component_Interface {
 					'slug'  => 'theme-white',
 					'color' => '#ECF0F1',
 				],
-				[
-					'name'  => __( 'Dusty daylight', 'wp-rig' ),
-					'slug'  => 'custom-daylight',
-					'color' => '#97c0b7',
-				],
-				[
-					'name'  => __( 'Dusty sun', 'wp-rig' ),
-					'slug'  => 'custom-sun',
-					'color' => '#eee9d1',
-				],
 			]
 		);
 

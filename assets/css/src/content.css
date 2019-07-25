@@ -255,24 +255,6 @@
 	background-color: var(--color-theme-white);
 }
 
-.has-custom-daylight-color,
-.has-custom-daylight-color a {
-	color: var(--color-custom-daylight);
-}
-
-.has-custom-daylight-background-color {
-	background-color: var(--color-custom-daylight);
-}
-
-.has-custom-sun-color,
-.has-custom-sun-color a {
-	color: var(--color-custom-sun);
-}
-
-.has-custom-sun-background-color {
-	background-color: var(--color-custom-sun);
-}
-
 /*--------------------------------------------------------------
 ## Custom block font sizes.
 --------------------------------------------------------------*/
