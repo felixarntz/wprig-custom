@@ -36,6 +36,7 @@ class Component implements Component_Interface {
 	 */
 	public function initialize() {
 		add_filter( 'wprig_editor_color_palette', [ $this, 'filter_wprig_editor_color_palette' ] );
+		add_filter( 'wp_rig_preloading_styles_enabled', '__return_false' ); // Stylesheets must be included before custom properties.
 		add_action( 'wp_head', [ $this, 'action_print_css_custom_properties' ] );
 		add_action( 'customize_register', [ $this, 'action_customize_register' ] );
 		add_action( 'customize_preview_init', [ $this, 'action_enqueue_customize_preview_js' ] );
