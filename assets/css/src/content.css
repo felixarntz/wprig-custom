@@ -34,6 +34,7 @@
 
 .entry-meta,
 .entry-footer {
+	color: var(--highlight-font-color);
 	font-family: var(--highlight-font-family);
 	font-stretch: condensed;
 	font-size: 80%;

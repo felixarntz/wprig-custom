@@ -10,6 +10,9 @@
 	--global-font-family: "Crimson Text", serif;
 	--global-font-size: 20;
 	--global-font-line-height: 1.4;
+	--branding-font-color: #333;
+	--branding-font-family: "Roboto Condensed", "Helvetica Neue", "Arial Narrow", sans-serif;
+	--highlight-font-color: #333;
 	--highlight-font-family: "Roboto Condensed", "Helvetica Neue", "Arial Narrow", sans-serif;
 	--content-width: 45rem;
 	--dropdown-symbol-width: 0.7em;

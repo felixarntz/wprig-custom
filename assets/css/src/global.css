@@ -223,12 +223,12 @@ select {
 
 .site-title {
 	margin: 0 1em;
-	font-family: var(--highlight-font-family);
+	color: var(--branding-font-color);
+	font-family: var(--branding-font-family);
 	font-stretch: condensed;
 	font-size: 38px;
 	font-weight: 700;
 	line-height: 1.2;
-	color: #333332;
 }
 
 .site-title a {
@@ -238,13 +238,13 @@ select {
 
 .site-description {
 	margin: 0.4375em 0 0;
-	font-family: var(--highlight-font-family);
+	color: var(--branding-font-color);
+	font-family: var(--branding-font-family);
 	font-stretch: condensed;
 	font-size: 17px;
 	font-weight: inherit;
 	line-height: 1.4;
 	word-wrap: break-word;
-	color: #757575;
 }
 
 /*--------------------------------------------------------------
@@ -254,6 +254,7 @@ select {
 	display: block;
 	margin: 1.2em auto;
 	padding: 0.6em 1.2em 0.5em;
+	color: var(--highlight-font-color);
 	font-family: var(--highlight-font-family);
 	font-stretch: condensed;
 	font-size: 80%;
@@ -386,6 +387,7 @@ select {
 	margin: 0 auto 2em;
 	padding: 0 1em;
 	max-width: var(--content-width);
+	color: var(--highlight-font-color);
 	font-family: var(--highlight-font-family);
 	font-stretch: condensed;
 }
@@ -469,6 +471,7 @@ select {
 	max-width: var(--content-width);
 	overflow: hidden;
 	padding: 0 1.5rem 2em;
+	color: var(--highlight-font-color);
 	font-family: var(--highlight-font-family);
 	font-stretch: condensed;
 }
@@ -569,6 +572,7 @@ select {
 .site-footer {
 	margin: 1em 0 0;
 	padding: 2em 0;
+	color: var(--highlight-font-color);
 	font-family: var(--highlight-font-family);
 	font-stretch: condensed;
 }

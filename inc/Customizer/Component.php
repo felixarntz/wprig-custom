@@ -229,6 +229,18 @@ class Component implements Component_Interface {
 				'title'        => __( 'Link Active Color', 'wp-rig' ),
 				'default'      => '#00a0d2',
 			],
+			[
+				'setting'      => 'branding_font_color',
+				'css_property' => 'branding-font-color',
+				'title'        => __( 'Branding Font Color', 'wp-rig' ),
+				'default'      => '#333333',
+			],
+			[
+				'setting'      => 'highlight_font_color',
+				'css_property' => 'highlight-font-color',
+				'title'        => __( 'Highlight Font Color', 'wp-rig' ),
+				'default'      => '#333333',
+			],
 		];
 	}
 
