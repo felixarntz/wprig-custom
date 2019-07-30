@@ -71,7 +71,7 @@ class Component implements Component_Interface {
 	 * Prints a style tag containing CSS rules for custom properties controlled by the Customizer.
 	 */
 	public function action_print_css_custom_properties() {
-		echo '<style id="wprig-css-custom-properties" type="text/css">';
+		echo '<style id="wprig-css-custom-properties-colors" type="text/css">';
 		$this->print_css_custom_properties();
 		echo '</style>';
 	}
@@ -170,10 +170,10 @@ class Component implements Component_Interface {
 
 		if ( isset( $wp_customize->selective_refresh ) ) {
 			$wp_customize->selective_refresh->add_partial(
-				'css_custom_properties',
+				'css_custom_properties_colors',
 				[
 					'settings'        => $partial_settings,
-					'selector'        => '#wprig-css-custom-properties',
+					'selector'        => '#wprig-css-custom-properties-colors',
 					'render_callback' => function() {
 						$this->print_css_custom_properties();
 					},
