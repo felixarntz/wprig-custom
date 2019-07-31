@@ -244,7 +244,7 @@ class Fonts {
 			],
 			'Anton'              => [
 				'weight'   => [ '400' ],
-				'fallback' => [ 'serif' ],
+				'fallback' => [ 'sans-serif' ],
 			],
 			'Arvo'               => [
 				'weight'   => [ '400', '700' ],
@@ -252,15 +252,15 @@ class Fonts {
 			],
 			'Asap'               => [
 				'weight'   => [ '400', '500', '600', '700' ],
-				'fallback' => [ 'serif' ],
+				'fallback' => [ 'sans-serif' ],
 			],
 			'Barlow Condensed'   => [
 				'weight'   => [ '100', '200', '300', '400', '500', '600', '700', '800', '900' ],
-				'fallback' => [ 'serif' ],
+				'fallback' => [ 'sans-serif' ],
 			],
 			'Barlow'             => [
 				'weight'   => [ '100', '200', '300', '400', '500', '600', '700', '800', '900' ],
-				'fallback' => [ 'serif' ],
+				'fallback' => [ 'sans-serif' ],
 			],
 			'Cormorant Garamond' => [
 				'weight'   => [ '300', '400', '500', '600', '700' ],
@@ -284,19 +284,19 @@ class Fonts {
 			],
 			'Inconsolata'        => [
 				'weight'   => [ '400', '700' ],
-				'fallback' => [ 'serif' ],
+				'fallback' => [ 'monospace' ],
 			],
 			'Heebo'              => [
 				'weight'   => [ '100', '200', '300', '400', '500', '600', '700', '800', '900' ],
-				'fallback' => [ 'serif' ],
+				'fallback' => [ 'sans-serif' ],
 			],
 			'Karla'              => [
 				'weight'   => [ '400', '700' ],
-				'fallback' => [ 'serif' ],
+				'fallback' => [ 'sans-serif' ],
 			],
 			'Lato'               => [
 				'weight'   => [ '100', '200', '300', '400', '500', '600', '700', '800', '900' ],
-				'fallback' => [ 'serif' ],
+				'fallback' => [ 'sans-serif' ],
 			],
 			'Lora'               => [
 				'weight'   => [ '400', '700' ],
@@ -308,7 +308,7 @@ class Fonts {
 			],
 			'Montserrat'         => [
 				'weight'   => [ '100', '200', '300', '400', '500', '600', '700', '800', '900' ],
-				'fallback' => [ 'serif' ],
+				'fallback' => [ 'sans-serif' ],
 			],
 			'Noto Sans'          => [
 				'weight'   => [ '400', '700' ],
@@ -324,7 +324,7 @@ class Fonts {
 			],
 			'Oswald'             => [
 				'weight'   => [ '200', '300', '400', '500', '600', '700' ],
-				'fallback' => [ 'serif' ],
+				'fallback' => [ 'sans-serif' ],
 			],
 			'Playfair Display'   => [
 				'weight'   => [ '400', '700', '900' ],
@@ -336,23 +336,23 @@ class Fonts {
 			],
 			'Roboto Condensed'   => [
 				'weight'   => [ '300', '400', '700' ],
-				'fallback' => [ 'Helvetica Neue', 'Arial Narrow', 'sans-serif' ],
+				'fallback' => [ 'sans-serif' ],
 			],
 			'Roboto'             => [
 				'weight'   => [ '100', '300', '400', '500', '700', '900' ],
-				'fallback' => [ 'Helvetica Neue', 'Arial Narrow', 'sans-serif' ],
+				'fallback' => [ 'sans-serif' ],
 			],
 			'Rubik'              => [
 				'weight'   => [ '300', '400', '500', '700', '900' ],
-				'fallback' => [ 'serif' ],
+				'fallback' => [ 'sans-serif' ],
 			],
 			'Tajawal'            => [
 				'weight'   => [ '200', '300', '400', '500', '700', '800', '900' ],
-				'fallback' => [ 'serif' ],
+				'fallback' => [ 'sans-serif' ],
 			],
 			'Ubuntu'             => [
 				'weight'   => [ '300', '400', '500', '700' ],
-				'fallback' => [ 'serif' ],
+				'fallback' => [ 'sans-serif' ],
 			],
 			'Yrsa'               => [
 				'weight'   => [ '300', '400', '500', '600', '700' ],
