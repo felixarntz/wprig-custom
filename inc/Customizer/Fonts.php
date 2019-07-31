@@ -81,6 +81,7 @@ class Fonts {
 		$fonts = $this->get_fonts();
 
 		$available_fonts = array_keys( array_merge( $this->get_available_system_fonts(), $this->get_available_google_fonts() ) );
+		sort( $available_fonts );
 		$available_fonts = array_combine( $available_fonts, $available_fonts );
 
 		$wp_customize->add_section(
