@@ -54,10 +54,10 @@ class Colors {
 	}
 
 	/**
-	 * Prints a style tag containing CSS rules for custom properties controlled by the Customizer.
+	 * Prints a style tag containing CSS rules for color custom properties controlled by the Customizer.
 	 */
 	public function action_print_css_custom_properties_colors() {
-		echo '<style id="wprig-css-custom-properties-colors" type="text/css">';
+		echo '<style id="wp-rig-css-custom-properties-colors" type="text/css">';
 		$this->print_css_custom_properties_colors();
 		echo '</style>';
 	}
@@ -101,7 +101,7 @@ class Colors {
 				'css_custom_properties_colors',
 				[
 					'settings'        => $partial_settings,
-					'selector'        => '#wprig-css-custom-properties-colors',
+					'selector'        => '#wp-rig-css-custom-properties-colors',
 					'render_callback' => function() {
 						$this->print_css_custom_properties_colors();
 					},

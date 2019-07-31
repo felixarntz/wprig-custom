@@ -38,6 +38,9 @@ class Component implements Component_Interface {
 
 		$colors = new Colors();
 		$colors->initialize();
+
+		$fonts = new Fonts();
+		$fonts->initialize();
 	}
 
 	/**

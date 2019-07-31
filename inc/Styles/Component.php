@@ -35,6 +35,7 @@ use function add_query_arg;
  *
  * Exposes template tags:
  * * `wp_rig()->print_styles()`
+ * * `wp_rig()->get_google_fonts_url()`
  */
 class Component implements Component_Interface, Templating_Component_Interface {
 
@@ -87,7 +88,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 */
 	public function template_tags() : array {
 		return [
-			'print_styles' => [ $this, 'print_styles' ],
+			'print_styles'         => [ $this, 'print_styles' ],
+			'get_google_fonts_url' => [ $this, 'get_google_fonts_url' ],
 		];
 	}
 
@@ -352,7 +354,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 * @return array Associative array of $font_name => $font_variants pairs.
 	 */
 	protected function get_google_fonts() : array {
-		if ( is_array( $this->google_fonts ) ) {
+		if ( is_array( $this->google_fonts ) && ! is_customize_preview() ) {
 			return $this->google_fonts;
 		}
 
@@ -378,7 +380,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 *
 	 * @return string Google Fonts URL, or empty string if no Google Fonts should be used.
 	 */
-	protected function get_google_fonts_url() : string {
+	public function get_google_fonts_url() : string {
 		$google_fonts = $this->get_google_fonts();
 
 		if ( empty( $google_fonts ) ) {
