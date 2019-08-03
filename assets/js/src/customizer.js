@@ -38,4 +38,42 @@
 			}
 		} );
 	} );
+
+	if ( wp.customize.selectiveRefresh ) {
+		const selectiveRefresh = wp.customize.selectiveRefresh;
+
+		function findParent( element, selector ) {
+			while ( element && element !== document ) {
+				element = element.parentElement;
+
+				if ( element.matches( selector ) ) {
+					return element;
+				}
+			}
+
+			return undefined;
+		}
+
+		selectiveRefresh.partialConstructor[ 'post-context' ] = selectiveRefresh.Partial.extend({
+			placements: function() {
+				let partial = this, selector;
+
+				selector = partial.params.selector || '';
+				if ( selector ) {
+					selector += ', ';
+				}
+				selector += '[data-customize-partial-id="' + partial.id + '"]';
+
+				return Array.from( document.querySelectorAll( selector ) ).map( element => {
+					return new selectiveRefresh.Placement({
+						partial: partial,
+						container: element,
+						context: {
+							post_id: parseInt( findParent( element, 'article.hentry' ).id.replace( 'post-', '' ), 10 ),
+						},
+					});
+				});
+			},
+		});
+	}
 }( jQuery ) );
