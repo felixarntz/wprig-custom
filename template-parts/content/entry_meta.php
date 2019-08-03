@@ -12,7 +12,7 @@ $post_type_obj = get_post_type_object( get_post_type() );
 $time_string = '';
 
 // Show date only when the post type is 'post' or has an archive.
-if ( 'post' === $post_type_obj->name || $post_type_obj->has_archive ) {
+if ( wp_rig()->showing_post_meta( 'date' ) ) {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -32,7 +32,7 @@ if ( 'post' === $post_type_obj->name || $post_type_obj->has_archive ) {
 $author_string = '';
 
 // Show author only if the post type supports it.
-if ( post_type_supports( $post_type_obj->name, 'author' ) ) {
+if ( post_type_supports( $post_type_obj->name, 'author' ) && wp_rig()->showing_post_meta( 'author' ) ) {
 	$author_string = sprintf(
 		'<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),

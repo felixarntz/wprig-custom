@@ -19,6 +19,9 @@ $taxonomies = wp_list_filter(
 	<?php
 	// Show terms for all taxonomies associated with the post.
 	foreach ( $taxonomies as $taxonomy ) { // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+		if ( ! wp_rig()->showing_post_taxonomy_terms( $taxonomy->name ) ) {
+			continue;
+		}
 
 		/* translators: separator between taxonomy terms */
 		$separator = _x( ', ', 'list item separator', 'wp-rig' );

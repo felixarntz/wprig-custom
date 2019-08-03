@@ -150,6 +150,7 @@ class Theme {
 			new Custom_Header\Component(),
 			new Custom_Logo\Component(),
 			new Post_Thumbnails\Component(),
+			new Post_Content\Component(),
 			new Customizer\Component(),
 			new Styles\Component(),
 		];
