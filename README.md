@@ -13,3 +13,4 @@ The fork contains several additional features which are more opinionated than wh
 
 * Sitewide color configuration with the Customizer
 * Sitewide font configuration (including Google Fonts) with the Customizer
+* Sitewide toggling of whether specific post metadata and taxonomies are shown per post type with the Customizer

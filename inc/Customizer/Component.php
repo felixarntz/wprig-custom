@@ -41,6 +41,9 @@ class Component implements Component_Interface {
 
 		$fonts = new Fonts();
 		$fonts->initialize();
+
+		$post_content_toggles = new Post_Content_Toggles();
+		$post_content_toggles->initialize();
 	}
 
 	/**

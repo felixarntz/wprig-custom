@@ -14,7 +14,7 @@ use function add_action;
 use function get_theme_mod;
 
 /**
- * Class for managing Customizer support for controlling colors.
+ * Class for managing Customizer support for controlling fonts.
  */
 class Fonts {
 
