@@ -114,3 +114,13 @@ ins {
 big {
 	font-size: 125%;
 }
+
+.icon {
+	display: inline-block;
+	fill: currentColor;
+	height: 1rem;
+	position: relative;
+	top: -0.0625em;
+	vertical-align: middle;
+	width: 1rem;
+}
