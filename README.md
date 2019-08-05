@@ -16,3 +16,4 @@ The fork contains several additional features which are more opinionated than wh
 * Sitewide toggling of whether specific post metadata and taxonomies are shown per post type with the Customizer
 * Accessible and performant SVG icon infrastructure
 * Social nav menu with automatically added icons
+* Inline footer menu for additional links

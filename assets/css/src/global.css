@@ -622,6 +622,26 @@ select {
 	text-align: center;
 }
 
+.inline-menu {
+	display: inline-block;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.inline-menu li {
+	display: inline-block;
+}
+
+.inline-menu li a {
+	display: inline-block;
+	margin-left: 1rem;
+}
+
+.inline-menu li:first-child a {
+	margin-left: 0;
+}
+
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/

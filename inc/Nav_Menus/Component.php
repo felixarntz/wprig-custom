@@ -23,12 +23,15 @@ use function wp_nav_menu;
  * Exposes template tags:
  * * `wp_rig()->is_primary_nav_menu_active()`
  * * `wp_rig()->display_primary_nav_menu( array $args = [] )`
+ * * `wp_rig()->is_footer_nav_menu_active()`
+ * * `wp_rig()->display_footer_nav_menu( array $args = [] )`
  * * `wp_rig()->is_social_nav_menu_active()`
  * * `wp_rig()->display_social_nav_menu( array $args = [] )`
  */
 class Component implements Component_Interface, Templating_Component_Interface {
 
 	const PRIMARY_NAV_MENU_SLUG = 'primary';
+	const FOOTER_NAV_MENU_SLUG = 'footer';
 
 	/**
 	 * Gets the unique identifier for the theme component.
@@ -61,6 +64,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		return [
 			'is_primary_nav_menu_active' => [ $this, 'is_primary_nav_menu_active' ],
 			'display_primary_nav_menu'   => [ $this, 'display_primary_nav_menu' ],
+			'is_footer_nav_menu_active' => [ $this, 'is_footer_nav_menu_active' ],
+			'display_footer_nav_menu'   => [ $this, 'display_footer_nav_menu' ],
 			'is_social_nav_menu_active'  => [ $this, 'is_social_nav_menu_active' ],
 			'display_social_nav_menu'    => [ $this, 'display_social_nav_menu' ],
 		];
@@ -73,6 +78,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		register_nav_menus(
 			[
 				static::PRIMARY_NAV_MENU_SLUG => esc_html__( 'Primary', 'wp-rig' ),
+				static::FOOTER_NAV_MENU_SLUG  => esc_html__( 'Footer', 'wp-rig' ),
 				Social_Nav_Menu::SLUG         => esc_html__( 'Social', 'wp-rig' ),
 			]
 		);
@@ -134,6 +140,34 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		}
 
 		$args['theme_location'] = static::PRIMARY_NAV_MENU_SLUG;
+
+		wp_nav_menu( $args );
+	}
+
+	/**
+	 * Checks whether the footer navigation menu is active.
+	 *
+	 * @return bool True if the footer navigation menu is active, false otherwise.
+	 */
+	public function is_footer_nav_menu_active() : bool {
+		return (bool) has_nav_menu( static::FOOTER_NAV_MENU_SLUG );
+	}
+
+	/**
+	 * Displays the footer navigation menu.
+	 *
+	 * @param array $args Optional. Array of arguments. See `wp_nav_menu()` documentation for a list of supported
+	 *                    arguments.
+	 */
+	public function display_footer_nav_menu( array $args = [] ) {
+		if ( ! isset( $args['container'] ) ) {
+			$args['container'] = false;
+		}
+		if ( ! isset( $args['menu_class'] ) ) {
+			$args['menu_class'] = 'menu inline-menu';
+		}
+
+		$args['theme_location'] = static::FOOTER_NAV_MENU_SLUG;
 
 		wp_nav_menu( $args );
 	}
