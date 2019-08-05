@@ -567,6 +567,47 @@ select {
 }
 
 /*--------------------------------------------------------------
+## Social navigation menu
+--------------------------------------------------------------*/
+.social-navigation ul {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.social-navigation ul li {
+	display: block;
+}
+
+.social-navigation ul li a {
+	color: var(--color-link);
+	display: block;
+	margin-left: 1rem;
+}
+
+.social-navigation ul li:first-child a {
+	margin-left: 0;
+}
+
+.social-navigation ul li a:visited {
+	color: var(--color-link);
+}
+
+.social-navigation ul li a:hover,
+.social-navigation ul li a:focus,
+.social-navigation ul li a:active {
+	color: var(--color-link-active);
+}
+
+.social-navigation ul li a svg {
+	height: var(--social-icon-size);
+	width: var(--social-icon-size);
+}
+
+/*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
 .site-footer {

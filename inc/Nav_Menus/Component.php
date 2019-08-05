@@ -23,6 +23,8 @@ use function wp_nav_menu;
  * Exposes template tags:
  * * `wp_rig()->is_primary_nav_menu_active()`
  * * `wp_rig()->display_primary_nav_menu( array $args = [] )`
+ * * `wp_rig()->is_social_nav_menu_active()`
+ * * `wp_rig()->display_social_nav_menu( array $args = [] )`
  */
 class Component implements Component_Interface, Templating_Component_Interface {
 
@@ -43,6 +45,9 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	public function initialize() {
 		add_action( 'after_setup_theme', [ $this, 'action_register_nav_menus' ] );
 		add_filter( 'walker_nav_menu_start_el', [ $this, 'filter_primary_nav_menu_dropdown_symbol' ], 10, 4 );
+
+		$social_nav_menu = new Social_Nav_Menu();
+		$social_nav_menu->initialize();
 	}
 
 	/**
@@ -56,6 +61,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		return [
 			'is_primary_nav_menu_active' => [ $this, 'is_primary_nav_menu_active' ],
 			'display_primary_nav_menu'   => [ $this, 'display_primary_nav_menu' ],
+			'is_social_nav_menu_active'  => [ $this, 'is_social_nav_menu_active' ],
+			'display_social_nav_menu'    => [ $this, 'display_social_nav_menu' ],
 		];
 	}
 
@@ -66,6 +73,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		register_nav_menus(
 			[
 				static::PRIMARY_NAV_MENU_SLUG => esc_html__( 'Primary', 'wp-rig' ),
+				Social_Nav_Menu::SLUG         => esc_html__( 'Social', 'wp-rig' ),
 			]
 		);
 	}
@@ -126,6 +134,39 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		}
 
 		$args['theme_location'] = static::PRIMARY_NAV_MENU_SLUG;
+
+		wp_nav_menu( $args );
+	}
+
+	/**
+	 * Checks whether the social navigation menu is active.
+	 *
+	 * @return bool True if the social navigation menu is active, false otherwise.
+	 */
+	public function is_social_nav_menu_active() : bool {
+		return (bool) has_nav_menu( Social_Nav_Menu::SLUG );
+	}
+
+	/**
+	 * Displays the social navigation menu.
+	 *
+	 * @param array $args Optional. Array of arguments. See `wp_nav_menu()` documentation for a list of supported
+	 *                    arguments.
+	 */
+	public function display_social_nav_menu( array $args = [] ) {
+		if ( ! isset( $args['container'] ) ) {
+			$args['container'] = false;
+		}
+		if ( ! isset( $args['menu_class'] ) ) {
+			$args['menu_class'] = 'menu social-menu';
+		}
+		if ( ! isset( $args['link_before'] ) && ! isset( $args['link_after'] ) ) {
+			$args['link_before'] = '<span class="screen-reader-text">';
+			$args['link_after']  = '</span>';
+		}
+
+		$args['theme_location'] = Social_Nav_Menu::SLUG;
+		$args['depth']          = 1;
 
 		wp_nav_menu( $args );
 	}

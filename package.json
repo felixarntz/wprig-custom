@@ -90,7 +90,10 @@
     }
   },
   "stylelint": {
-    "extends": "stylelint-config-wordpress"
+    "extends": "stylelint-config-wordpress",
+    "rules": {
+      "no-descending-specificity": null
+    }
   },
   "scripts": {
     "build": "gulp buildDev",
