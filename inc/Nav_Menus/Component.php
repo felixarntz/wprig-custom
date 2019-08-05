@@ -77,9 +77,9 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	public function action_register_nav_menus() {
 		register_nav_menus(
 			[
-				static::PRIMARY_NAV_MENU_SLUG => esc_html__( 'Primary', 'wp-rig' ),
-				static::FOOTER_NAV_MENU_SLUG  => esc_html__( 'Footer', 'wp-rig' ),
-				Social_Nav_Menu::SLUG         => esc_html__( 'Social', 'wp-rig' ),
+				static::PRIMARY_NAV_MENU_SLUG => esc_html_x( 'Primary', 'nav menu', 'wp-rig' ),
+				static::FOOTER_NAV_MENU_SLUG  => esc_html_x( 'Footer', 'nav menu', 'wp-rig' ),
+				Social_Nav_Menu::SLUG         => esc_html_x( 'Social', 'nav menu', 'wp-rig' ),
 			]
 		);
 	}
