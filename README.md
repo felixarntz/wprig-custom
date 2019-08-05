@@ -18,3 +18,4 @@ The fork contains several additional features which are more opinionated than wh
 * Social nav menu with automatically added icons
 * Inline footer menu for additional links
 * Coherent button styles and variations
+* [Atomic Blocks](https://wordpress.org/plugins/atomic-blocks/) support

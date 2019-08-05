@@ -1,0 +1,14 @@
+@import "_custom-properties.css";
+
+.ab-button {
+	background-color: var(--color-theme-black);
+	color: var(--color-theme-white);
+}
+
+.wp-block-atomic-blocks-ab-button.is-style-primary .ab-button {
+	background-color: var(--color-theme-primary);
+}
+
+.wp-block-atomic-blocks-ab-button.is-style-secondary .ab-button {
+	background-color: var(--color-theme-secondary);
+}

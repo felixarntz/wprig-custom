@@ -171,6 +171,16 @@ class Component implements Component_Interface {
 					'label' => _x( 'Secondary', 'button style', 'wp-rig' ),
 				],
 			],
+			'atomic-blocks/ab-button' => [
+				[
+					'name'  => 'primary',
+					'label' => _x( 'Primary', 'button style', 'wp-rig' ),
+				],
+				[
+					'name'  => 'secondary',
+					'label' => _x( 'Secondary', 'button style', 'wp-rig' ),
+				],
+			],
 		];
 
 		$script = '';
