@@ -32,6 +32,32 @@
  * .wp-block-archives
  */
 
+.wp-block-button__link {
+	appearance: none;
+	border: 0;
+	border-radius: 3px;
+	background: var(--color-theme-black);
+	color: var(--color-theme-white);
+	font-size: var(--font-size-regular);
+	line-height: 1;
+	padding: 0.6em 1em 0.4em;
+	cursor: pointer;
+}
+
+.wp-block-button__link:hover,
+.wp-block-button__link:active,
+.wp-block-button__link:focus {
+	color: var(--color-theme-grey);
+}
+
+.wp-block-button.is-style-primary .wp-block-button__link {
+	background: var(--color-theme-primary);
+}
+
+.wp-block-button.is-style-secondary .wp-block-button__link {
+	background: var(--color-theme-secondary);
+}
+
 .wp-block-quote.is-large,
 .wp-block-quote.is-style-large {
 	margin: 1.5em auto;

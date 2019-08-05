@@ -32,6 +32,7 @@ class Component implements Component_Interface {
 	 */
 	public function initialize() {
 		add_action( 'after_setup_theme', [ $this, 'action_add_editor_support' ] );
+		add_action( 'enqueue_block_editor_assets', [ $this, 'action_add_block_style_variations' ] );
 	}
 
 	/**
@@ -49,12 +50,12 @@ class Component implements Component_Interface {
 
 		$editor_color_palette = [
 			[
-				'name'  => __( 'Primary', 'wp-rig' ),
+				'name'  => _x( 'Primary', 'color', 'wp-rig' ),
 				'slug'  => 'theme-primary',
 				'color' => '#e36d60',
 			],
 			[
-				'name'  => __( 'Secondary', 'wp-rig' ),
+				'name'  => _x( 'Secondary', 'color', 'wp-rig' ),
 				'slug'  => 'theme-secondary',
 				'color' => '#41848f',
 			],
@@ -153,5 +154,33 @@ class Component implements Component_Interface {
 				],
 			]
 		);
+	}
+
+	/**
+	 * Adds block style variations for certain blocks.
+	 */
+	public function action_add_block_style_variations() {
+		$style_variations = [
+			'core/button' => [
+				[
+					'name'  => 'primary',
+					'label' => _x( 'Primary', 'button style', 'wp-rig' ),
+				],
+				[
+					'name'  => 'secondary',
+					'label' => _x( 'Secondary', 'button style', 'wp-rig' ),
+				],
+			],
+		];
+
+		$script = '';
+		foreach ( $style_variations as $block_type => $variations ) {
+			foreach ( $variations as $variation ) {
+				$variation = wp_json_encode( $variation );
+				$script   .= "wp.blocks.registerBlockStyle( '{$block_type}', {$variation} );";
+			}
+		}
+
+		wp_add_inline_script( 'wp-blocks', $script, 'after' );
 	}
 }

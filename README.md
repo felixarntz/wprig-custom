@@ -17,3 +17,4 @@ The fork contains several additional features which are more opinionated than wh
 * Accessible and performant SVG icon infrastructure
 * Social nav menu with automatically added icons
 * Inline footer menu for additional links
+* Coherent button styles and variations

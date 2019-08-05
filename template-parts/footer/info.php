@@ -10,6 +10,8 @@ namespace WP_Rig\WP_Rig;
 ?>
 
 <div class="site-info">
+	<button type="button" class="button-primary">Click here</button>
+	<br>
 	<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'wp-rig' ) ); ?>">
 		<?php
 		/* translators: %s: CMS name, i.e. WordPress. */
