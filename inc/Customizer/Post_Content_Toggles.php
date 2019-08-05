@@ -167,9 +167,9 @@ class Post_Content_Toggles {
 							'settings'            => $meta_partial_settings,
 							'selector'            => '.type-' . $post_type->name . ' .entry-meta',
 							'container_inclusive' => true,
-							'type'                => 'post-context', // Custom partial type, see customizer.js script.
-							'render_callback'     => function( $partial, array $context ) {
-								if ( empty( $context['post_id'] ) ) {
+							'type'                => 'post_instance', // Custom partial type, see customizer.js script.
+							'render_callback'     => function( $partial, $context ) {
+								if ( ! is_array( $context ) || empty( $context['post_id'] ) ) {
 									return;
 								}
 								$this->print_content_template_part_for_post( 'entry_meta', (int) $context['post_id'] );
@@ -185,9 +185,9 @@ class Post_Content_Toggles {
 							'settings'            => $taxonomies_partial_settings,
 							'selector'            => '.type-' . $post_type->name . ' .entry-taxonomies',
 							'container_inclusive' => true,
-							'type'                => 'post-context', // Custom partial type, see customizer.js script.
-							'render_callback'     => function( $partial, array $context ) {
-								if ( empty( $context['post_id'] ) ) {
+							'type'                => 'post_instance', // Custom partial type, see customizer.js script.
+							'render_callback'     => function( $partial, $context ) {
+								if ( ! is_array( $context ) || empty( $context['post_id'] ) ) {
 									return;
 								}
 								$this->print_content_template_part_for_post( 'entry_taxonomies', (int) $context['post_id'] );

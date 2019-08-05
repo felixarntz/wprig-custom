@@ -96,7 +96,7 @@ class Component implements Component_Interface {
 		wp_enqueue_script(
 			'wp-rig-customizer',
 			get_theme_file_uri( '/assets/js/customizer.min.js' ),
-			[ 'customize-preview' ],
+			[ 'customize-preview', 'customize-selective-refresh' ],
 			wp_rig()->get_asset_version( get_theme_file_path( '/assets/js/customizer.min.js' ) ),
 			true
 		);

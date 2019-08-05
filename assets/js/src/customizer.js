@@ -40,8 +40,6 @@
 	} );
 
 	if ( wp.customize.selectiveRefresh ) {
-		const selectiveRefresh = wp.customize.selectiveRefresh;
-
 		function findParent( element, selector ) {
 			while ( element && element !== document ) {
 				element = element.parentElement;
@@ -54,8 +52,8 @@
 			return undefined;
 		}
 
-		selectiveRefresh.partialConstructor[ 'post-context' ] = selectiveRefresh.Partial.extend( {
-			placements: () => {
+		wp.customize.selectiveRefresh.partialConstructor.post_instance = wp.customize.selectiveRefresh.Partial.extend( {
+			placements: function() { // eslint-disable-line object-shorthand
 				const partial = this;
 				let selector;
 
@@ -66,7 +64,7 @@
 				selector += '[data-customize-partial-id="' + partial.id + '"]';
 
 				return Array.from( document.querySelectorAll( selector ) ).map( ( element ) => {
-					return new selectiveRefresh.Placement( {
+					return new wp.customize.selectiveRefresh.Placement( {
 						partial,
 						container: element,
 						context: {
