@@ -32,6 +32,10 @@
  * .wp-block-archives
  */
 
+/*--------------------------------------------------------------
+# Button Block - overrides core styles and provides variations
+--------------------------------------------------------------*/
+
 .wp-block-button__link {
 	appearance: none;
 	border: 0;
@@ -57,6 +61,10 @@
 .wp-block-button.is-style-secondary .wp-block-button__link {
 	background: var(--color-theme-secondary);
 }
+
+/*--------------------------------------------------------------
+# Quote Block - overrides core styles
+--------------------------------------------------------------*/
 
 .wp-block-quote.is-large,
 .wp-block-quote.is-style-large {
@@ -87,6 +95,10 @@
 	border-left-color: var(--color-quote-citation);
 }
 
+/*--------------------------------------------------------------
+# Cover Block - overrides core styles
+--------------------------------------------------------------*/
+
 .wp-block-cover {
 	display: flex;
 	align-items: center;
@@ -103,7 +115,10 @@
 	margin-top: 0;
 }
 
-/* Columns Block */
+/*--------------------------------------------------------------
+# Column Block - overrides core styles
+--------------------------------------------------------------*/
+
 .wp-block-column {
 	flex-basis: 100%;
 }
@@ -116,6 +131,10 @@
 .wp-block-column:not(:first-child) {
 	margin-left: 0;
 }
+
+/*--------------------------------------------------------------
+# Latest Posts/Comments Blocks - overrides core styles
+--------------------------------------------------------------*/
 
 .wp-block-latest-posts,
 .wp-block-latest-comments {
@@ -173,9 +192,15 @@ ul.wp-block-latest-posts.is-grid.alignfull {
 	width: inherit;
 }
 
-
 .blocks-gallery-item:last-child:nth-child(odd) {
 	grid-column: span 2;
+}
+
+.wp-block-gallery.columns-3 .blocks-gallery-item:last-child:nth-child(3n),
+.wp-block-gallery.columns-5 .blocks-gallery-item:last-child:nth-child(5n),
+.wp-block-gallery.columns-7 .blocks-gallery-item:last-child:nth-child(7n),
+.wp-block-gallery.columns-9 .blocks-gallery-item:last-child:nth-child(9n) {
+	grid-column: span 1;
 }
 
 @media screen and (min-width: 40em) {
