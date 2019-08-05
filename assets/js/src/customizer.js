@@ -54,9 +54,10 @@
 			return undefined;
 		}
 
-		selectiveRefresh.partialConstructor[ 'post-context' ] = selectiveRefresh.Partial.extend({
-			placements: function() {
-				let partial = this, selector;
+		selectiveRefresh.partialConstructor[ 'post-context' ] = selectiveRefresh.Partial.extend( {
+			placements: () => {
+				const partial = this;
+				let selector;
 
 				selector = partial.params.selector || '';
 				if ( selector ) {
@@ -64,16 +65,16 @@
 				}
 				selector += '[data-customize-partial-id="' + partial.id + '"]';
 
-				return Array.from( document.querySelectorAll( selector ) ).map( element => {
-					return new selectiveRefresh.Placement({
-						partial: partial,
+				return Array.from( document.querySelectorAll( selector ) ).map( ( element ) => {
+					return new selectiveRefresh.Placement( {
+						partial,
 						container: element,
 						context: {
 							post_id: parseInt( findParent( element, 'article.hentry' ).id.replace( 'post-', '' ), 10 ),
 						},
-					});
-				});
+					} );
+				} );
 			},
-		});
+		} );
 	}
 }( jQuery ) );
