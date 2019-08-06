@@ -80,7 +80,7 @@ address {
 
 /* stylelint-disable */
 pre {
-	background: #eee;
+	background: var(--global-background-color-alt);
 	font-family: "Courier 10 Pitch", Courier, monospace;
 	font-size: 0.9375rem;
 	line-height: 1.6;
@@ -101,13 +101,14 @@ var {
 
 abbr,
 acronym {
-	border-bottom: 1px dotted #666;
+	border-bottom: 1px dotted;
+	border-bottom-color: var(--global-font-color);
 	cursor: help;
 }
 
 mark,
 ins {
-	background: #fff9c0;
+	background: var(--global-background-color-alt);
 	text-decoration: none;
 }
 

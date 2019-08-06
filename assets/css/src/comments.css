@@ -40,7 +40,8 @@
 }
 
 .comment-body {
-	border-bottom: 1px solid #c3c3c3;
+	border-bottom: 1px solid;
+	border-bottom-color: var(--global-border-color);
 	margin-bottom: 3em;
 }
 
@@ -76,7 +77,8 @@
 
 .bypostauthor .avatar {
 	box-sizing: content-box;
-	border: 5px solid #ccc;
+	border: 5px solid;
+	border-color: var(--global-border-color);
 	margin-top: -5px;
 	margin-left: -5px;
 }
@@ -144,24 +146,6 @@
 .comment-reply-link,
 .comment-form .form-submit input {
 	display: inline-block;
-	padding: 0.5em 1.4em;
-	color: var(--highlight-font-color);
-	font-family: var(--highlight-font-family);
-	font-stretch: condensed;
-	font-size: 85%;
-	line-height: 1.3;
-	text-decoration: none;
-	background: transparent;
-	border: 1px solid #c3c3c3;
-	border-radius: 0;
-}
-
-.comment-reply-link:hover,
-.comment-reply-link:focus,
-.comment-form .form-submit input:hover,
-.comment-form .form-submit input:focus {
-	border-color: #000;
-	cursor: pointer;
 }
 
 /* Comment Form */
@@ -211,7 +195,7 @@
 }
 
 .comment-form .required {
-	color: #d54e21;
+	color: var(--color-theme-red);
 }
 
 .comment-form .form-submit {

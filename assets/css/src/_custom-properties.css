@@ -6,6 +6,9 @@
  **/
 
 :root {
+	--global-background-color: #fff;
+	--global-background-color-alt: #eee;
+	--global-border-color: #ccc;
 	--global-font-color: #333;
 	--global-font-family: "Crimson Text", serif;
 	--global-font-size: 20;

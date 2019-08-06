@@ -22,14 +22,14 @@ html {
 
 /* stylelint-disable */
 body {
-	background: #fff;
+	background: var(--global-background-color);
 	/* Fallback for when there is no custom background color defined. */
 }
 /* stylelint-enable */
 
 /* stylelint-disable */
 hr {
-	background-color: #ccc;
+	background-color: var(--global-border-color);
 	border: 0;
 	height: 1px;
 	margin-bottom: 1.5em;

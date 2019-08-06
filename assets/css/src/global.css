@@ -119,16 +119,19 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
-.button {
+.button,
+.comment-reply-link {
 	appearance: none;
 	border: 0;
 	border-radius: 3px;
 	background: var(--color-theme-black);
 	color: var(--color-theme-white);
+	font-family: var(--highlight-font-family);
 	font-size: var(--font-size-regular);
 	line-height: 1;
 	padding: 0.6em 1em 0.4em;
 	cursor: pointer;
+	text-decoration: none;
 
 	&.button-primary {
 		background: var(--color-theme-primary);
@@ -154,7 +157,10 @@ input[type="submit"]:active,
 input[type="submit"]:focus,
 .button:hover,
 .button:active,
-.button:focus {
+.button:focus,
+.comment-reply-link:hover,
+.comment-reply-link:active,
+.comment-reply-link:focus {
 	color: var(--color-theme-grey);
 }
 
@@ -174,8 +180,9 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: #666;
-	border: 1px solid #ccc;
+	color: var(--global-font-color);
+	border: 1px solid;
+	border-color: var(--global-border-color);
 	border-radius: 3px;
 	padding: 3px;
 }
@@ -196,11 +203,12 @@ input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
-	color: #111;
+	color: var(--highlight-font-color);
 }
 
 select {
-	border: 1px solid #ccc;
+	border: 1px solid;
+	border-color: var(--global-border-color);
 }
 
 /*--------------------------------------------------------------
@@ -305,7 +313,7 @@ select {
 		position: absolute;
 		top: 100%;
 		flex-direction: column;
-		background: #fff;
+		background: var(--global-background-color);
 		margin-left: 0;
 		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 		z-index: 1;
@@ -476,7 +484,8 @@ select {
 .site-main .posts-navigation,
 .site-main .post-navigation,
 .site-main .pagination {
-	border-bottom: 1px solid #111;
+	border-bottom: 1px solid;
+	border-bottom-color: var(--highlight-font-color);
 	margin: 0 auto 2em;
 	max-width: var(--content-width);
 	overflow: hidden;
@@ -534,7 +543,8 @@ select {
 	display: inline-block;
 	margin-bottom: 0.5em;
 	margin-right: 1em;
-	border: 1px solid var(--color-link);
+	border: 1px solid;
+	border-color: var(--color-link);
 	min-width: 1.75em;
 	line-height: 1.75;
 	text-align: center;
@@ -548,7 +558,7 @@ select {
 .pagination a:hover,
 .pagination a:focus,
 .pagination a:active {
-	border-color: #00a0d2;
+	border-color: var(--color-link-active);
 }
 
 .pagination .prev,

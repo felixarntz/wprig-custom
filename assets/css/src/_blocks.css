@@ -42,10 +42,12 @@
 	border-radius: 3px;
 	background: var(--color-theme-black);
 	color: var(--color-theme-white);
+	font-family: var(--highlight-font-family);
 	font-size: var(--font-size-regular);
 	line-height: 1;
 	padding: 0.6em 1em 0.4em;
 	cursor: pointer;
+	text-decoration: none;
 }
 
 .wp-block-button__link:hover,

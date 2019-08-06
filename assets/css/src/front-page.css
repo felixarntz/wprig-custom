@@ -49,7 +49,8 @@
 		width: 100%;
 		margin-bottom: 0;
 		padding: 2rem 0 0;
-		border-top: 1px solid #111;
+		border-top: 1px solid;
+		border-top-color: var(--highlight-font-color);
 		border-bottom: none;
 	}
 
