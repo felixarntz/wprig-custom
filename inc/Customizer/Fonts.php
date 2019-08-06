@@ -24,7 +24,7 @@ class Fonts {
 	public function initialize() {
 		add_filter( 'wp_rig_google_fonts', [ $this, 'filter_wprig_google_fonts' ], -999 );
 		add_filter( 'wp_rig_preloading_styles_enabled', '__return_false' ); // Stylesheets must be included before custom properties.
-		add_action( 'wp_head', [ $this, 'action_print_css_custom_properties_fonts' ] );
+		add_action( 'wp_head', [ $this, 'action_print_css_custom_properties_fonts' ], 8 );
 		add_action( 'customize_register', [ $this, 'action_customize_register' ] );
 	}
 
