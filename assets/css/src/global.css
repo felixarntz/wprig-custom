@@ -208,7 +208,8 @@ select {
 --------------------------------------------------------------*/
 
 .site-header {
-	padding-bottom: 1em;
+	margin: 0;
+	padding: 0 0 2em;
 }
 
 .header-image {
@@ -620,8 +621,8 @@ select {
 # Footer
 --------------------------------------------------------------*/
 .site-footer {
-	margin: 1em 0 0;
-	padding: 2em 0;
+	margin: 0;
+	padding: 2em 0 0;
 	color: var(--highlight-font-color);
 	font-family: var(--highlight-font-family);
 	font-stretch: condensed;
