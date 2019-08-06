@@ -283,29 +283,35 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				'file'   => 'global.min.css',
 				'global' => true,
 			],
-			'wp-rig-comments'   => [
+			'wp-rig-comments'            => [
 				'file'             => 'comments.min.css',
 				'preload_callback' => function() {
 					return ! post_password_required() && is_singular() && ( comments_open() || get_comments_number() );
 				},
 			],
-			'wp-rig-content'    => [
+			'wp-rig-content'             => [
 				'file'             => 'content.min.css',
 				'preload_callback' => '__return_true',
 			],
-			'wp-rig-sidebar'    => [
+			'wp-rig-sidebar'             => [
 				'file'             => 'sidebar.min.css',
 				'preload_callback' => function() {
 					return wp_rig()->is_primary_sidebar_active();
 				},
 			],
-			'wp-rig-widgets'    => [
-				'file'             => 'widgets.min.css',
+			'wp-rig-footer-widget-areas' => [
+				'file'             => 'footer-widget-areas.min.css',
 				'preload_callback' => function() {
-					return wp_rig()->is_primary_sidebar_active();
+					return wp_rig()->has_active_footer_widget_areas();
 				},
 			],
-			'wp-rig-front-page' => [
+			'wp-rig-widgets'             => [
+				'file'             => 'widgets.min.css',
+				'preload_callback' => function() {
+					return wp_rig()->is_primary_sidebar_active() || wp_rig()->has_active_footer_widget_areas();
+				},
+			],
+			'wp-rig-front-page'          => [
 				'file' => 'front-page.min.css',
 				'preload_callback' => function() {
 					global $template;

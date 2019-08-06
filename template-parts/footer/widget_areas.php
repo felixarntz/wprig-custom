@@ -11,6 +11,8 @@ if ( ! wp_rig()->has_active_footer_widget_areas() ) {
 	return;
 }
 
+wp_rig()->print_styles( 'wp-rig-footer-widget-areas', 'wp-rig-widgets' );
+
 $widget_area_count = wp_rig()->get_footer_widget_area_count();
 
 ?>
@@ -21,7 +23,7 @@ $widget_area_count = wp_rig()->get_footer_widget_area_count();
 			continue;
 		}
 		?>
-		<div id="<?php echo esc_attr( 'footer-widget-area-' . $column ); ?>" class="footer-widget-area">
+		<div id="<?php echo esc_attr( 'footer-widget-area-' . $column ); ?>" class="footer-widget-area widget-area">
 			<?php wp_rig()->display_footer_widget_area( $column ); ?>
 		</div>
 		<?php

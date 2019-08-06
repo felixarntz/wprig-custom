@@ -627,36 +627,6 @@ select {
 	font-stretch: condensed;
 }
 
-.footer-widget-area .widget {
-	margin-bottom: 1em;
-}
-
-@media (--content-query) {
-
-	.footer-widget-areas {
-		align-items: stretch;
-		display: flex;
-		justify-content: stretch;
-	}
-
-	.footer-widget-area {
-		flex: 1;
-		padding: 0 1.5rem;
-	}
-
-	.footer-widget-area:first-child {
-		padding-left: 0;
-	}
-
-	.footer-widget-area:last-child {
-		padding-right: 0;
-	}
-
-	.footer-widget-area .widget:last-child {
-		margin-bottom: 0;
-	}
-}
-
 .site-info {
 	text-align: center;
 }
