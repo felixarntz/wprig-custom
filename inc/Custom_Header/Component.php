@@ -49,7 +49,7 @@ class Component implements Component_Interface {
 				'wp_rig_custom_header_args',
 				[
 					'default-image'      => '',
-					'default-text-color' => '000000',
+					'default-text-color' => '333333',
 					'width'              => 1600,
 					'height'             => 250,
 					'flex-height'        => true,
