@@ -33,6 +33,14 @@
 	margin-bottom: 1rem;
 }
 
+.entry:last-child {
+	margin-bottom: 0;
+
+	& > :last-child {
+		margin-bottom: 0;
+	}
+}
+
 .entry-meta,
 .entry-footer {
 	color: var(--highlight-font-color);
@@ -57,7 +65,7 @@
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	margin: 0 0 1.5em;
 }
 
 .page-content > *,
