@@ -71,6 +71,9 @@ class Colors {
 		$colors = array_merge( $this->get_base_colors(), $this->get_custom_theme_colors() );
 
 		$partial_settings = [];
+		if ( current_theme_supports( 'custom-background' ) ) { // Replaces the component's own background color setting.
+			$partial_settings[] = 'background_color';
+		}
 		foreach ( $colors as $color_data ) {
 			$wp_customize->add_setting(
 				$color_data['setting'],
@@ -117,7 +120,7 @@ class Colors {
 		$colors = array_merge( $this->get_base_colors(), $this->get_custom_theme_colors() );
 
 		echo ':root{';
-		if ( current_theme_supports( 'custom-background' ) && get_background_color() ) {
+		if ( current_theme_supports( 'custom-background' ) && get_background_color() ) { // Replaces the component's own background color setting.
 			echo '--global-background-color:#' . esc_attr( get_background_color() ) . ';';
 		}
 		foreach ( $colors as $color_data ) {
