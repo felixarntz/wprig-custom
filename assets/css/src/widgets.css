@@ -35,11 +35,7 @@
 	text-overflow: ellipsis;
 }
 
-/* Archive and Categories widgets */
-.widget_archive li {
-	color: #7d7d7d;
-}
-
+/* Categories widgets */
 .widget_categories .children {
 	padding-top: 0;
 }
@@ -61,7 +57,8 @@
 	display: block;
 	padding: 0.6em 0;
 	text-decoration: none;
-	border-bottom: 1px dashed #808080;
+	border-bottom: 1px dashed;
+	border-bottom-color: var(--highlight-font-color);
 }
 
 .widget_pages a:hover,
@@ -69,7 +66,8 @@
 .widget_nav_menu a:hover,
 .widget_nav_menu a:focus {
 	text-decoration: none;
-	border-bottom: 1px dashed #808080;
+	border-bottom: 1px dashed;
+	border-bottom-color: var(--highlight-font-color);
 }
 
 .widget_pages li,
@@ -112,7 +110,7 @@
 
 .rss-date,
 .widget_rss cite {
-	color: #333;
+	color: var(--global-font-color);
 	font-size: 0.8em;
 }
 
@@ -128,7 +126,8 @@
 	box-sizing: border-box;
 	width: 100%;
 	padding: 0.5em 1em;
-	border: 1px solid #c3c3c3;
+	border: 1px solid;
+	border-color: var(--global-border-color);
 	border-radius: 0;
 }
 
@@ -146,7 +145,7 @@
 
 .widget_calendar thead {
 	background: transparent;
-	color: #333;
+	color: var(--global-font-color);
 }
 
 .widget_calendar th {
@@ -162,12 +161,13 @@
 	padding: 0.2em;
 	font-size: 0.8em;
 	text-align: center;
-	background: #fff;
-	border: 1px solid #ccc;
+	background: var(--global-background-color);
+	border: 1px solid;
+	border-color: var(--global-border-color);
 }
 
 .widget_calendar .pad {
-	background: #eaeaea;
+	background: var(--global-background-color-alt);
 }
 
 /* stylelint-disable */
