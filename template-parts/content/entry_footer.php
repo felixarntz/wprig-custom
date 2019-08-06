@@ -7,6 +7,10 @@
 
 namespace WP_Rig\WP_Rig;
 
+if ( ! wp_rig()->showing_post_footer() ) {
+	return;
+}
+
 ?>
 <footer class="entry-footer">
 	<?php get_template_part( 'template-parts/content/entry_taxonomies', get_post_type() ); ?>

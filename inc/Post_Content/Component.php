@@ -17,6 +17,8 @@ use function get_post;
  * Class for managing which data is shown for a post.
  *
  * Exposes template tags:
+ * * `wp_rig()->showing_post_header( $post = null )`
+ * * `wp_rig()->showing_post_footer( $post = null )`
  * * `wp_rig()->showing_post_meta( string $field, $post = null )`
  * * `wp_rig()->showing_post_taxonomy_terms( string $taxonomy, $post = null )`
  */
@@ -47,9 +49,53 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 */
 	public function template_tags() : array {
 		return [
+			'showing_post_header'         => [ $this, 'showing_post_header' ],
+			'showing_post_footer'         => [ $this, 'showing_post_footer' ],
 			'showing_post_meta'           => [ $this, 'showing_post_meta' ],
 			'showing_post_taxonomy_terms' => [ $this, 'showing_post_taxonomy_terms' ],
 		];
+	}
+
+	/**
+	 * Checks whether the post header should be displayed.
+	 *
+	 * @param mixed $post Optional. WordPress post object or ID. Default is the current post.
+	 * @return bool True if the header should be displayed, false otherwise.
+	 */
+	public function showing_post_header( $post = null ) {
+		$post = get_post( $post );
+		if ( ! $post ) {
+			return false;
+		}
+
+		/**
+		 * Filters whether the post header should be displayed.
+		 *
+		 * @param bool    $show Whether to display the header.
+		 * @param WP_Post $post WordPress post object.
+		 */
+		return (bool) apply_filters( 'wp_rig_showing_post_header', true, $post );
+	}
+
+	/**
+	 * Checks whether the post footer should be displayed.
+	 *
+	 * @param mixed $post Optional. WordPress post object or ID. Default is the current post.
+	 * @return bool True if the footer should be displayed, false otherwise.
+	 */
+	public function showing_post_footer( $post = null ) {
+		$post = get_post( $post );
+		if ( ! $post ) {
+			return false;
+		}
+
+		/**
+		 * Filters whether the post footer should be displayed.
+		 *
+		 * @param bool    $show Whether to display the footer.
+		 * @param WP_Post $post WordPress post object.
+		 */
+		return (bool) apply_filters( 'wp_rig_showing_post_footer', true, $post );
 	}
 
 	/**
