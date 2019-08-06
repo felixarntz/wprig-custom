@@ -19,5 +19,6 @@ The fork contains several additional features which are more opinionated than wh
 * Multiple footer widget areas as individual columns
 * Social nav menu with automatically added icons
 * Inline footer menu for additional links
+* CSS colors fully controlled by custom properties
 * Coherent button styles and variations
 * [Atomic Blocks](https://wordpress.org/plugins/atomic-blocks/) support
