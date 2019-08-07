@@ -40,6 +40,14 @@ option {
 	border-radius: inherit;
 }
 
+.editor-post-permalink__link,
+.editor-post-permalink__link:visited {
+
+	/* This has to be hard-coded as it is a block editor color. */
+	color: #7e8993;
+	background: none;
+}
+
 .editor-block-toolbar button {
 
 	/* This has to be hard-coded as it is a block editor color. */
