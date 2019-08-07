@@ -14,7 +14,9 @@ The fork contains several additional features which are more opinionated than wh
 * Sitewide color configuration with the Customizer
 * Sitewide font configuration (including Google Fonts) with the Customizer
 * Sitewide toggling of whether specific post metadata and taxonomies are shown per post type with the Customizer
+* Sitewide modification of the footer info message with the Customizer
 * Infrastructure for conditionally displaying post-specific content (e.g. post header, post footer, post date, post author, post taxonomies)
+* Infrastructure for centrally managing the footer info message
 * Accessible and performant SVG icon infrastructure
 * Multiple footer widget areas as individual columns
 * Social nav menu with automatically added icons

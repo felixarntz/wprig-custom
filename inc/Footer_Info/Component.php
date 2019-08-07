@@ -9,9 +9,9 @@ namespace WP_Rig\WP_Rig\Footer_Info;
 
 use WP_Rig\WP_Rig\Component_Interface;
 use WP_Rig\WP_Rig\Templating_Component_Interface;
-use WP_Post;
 use function apply_filters;
-use function get_post;
+use function esc_html__;
+use function wp_kses;
 
 /**
  * Class for managing a footer info message (e.g. copyright).
@@ -77,6 +77,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			$footer_info = $default_footer_info;
 		}
 
-		echo wp_kses( $footer_info, 'footer_info' );
+		echo '<span class="site-footer-info">' . wp_kses( $footer_info, 'footer_info' ) . '</span>';
 	}
 }
