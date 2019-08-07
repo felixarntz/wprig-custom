@@ -68,7 +68,6 @@ export function editorStylesAfterReplacementStream() {
 				config.dev.styles.autoprefixer :
 				{}
 			),
-			preserve: false,
 			features: (
 				configValueDefined('config.dev.styles.features') ?
 				config.dev.styles.features :
@@ -77,8 +76,7 @@ export function editorStylesAfterReplacementStream() {
 						preserve: false
 					},
 					'custom-properties': {
-						// Preserve must always be false for the editor
-						preserve: false
+						preserve: true
 					},
 					'nesting-rules': true
 				}

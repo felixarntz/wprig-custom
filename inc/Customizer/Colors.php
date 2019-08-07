@@ -23,6 +23,7 @@ class Colors {
 	public function initialize() {
 		add_filter( 'wprig_editor_color_palette', [ $this, 'filter_wprig_editor_color_palette' ] );
 		add_filter( 'wp_rig_preloading_styles_enabled', '__return_false' ); // Stylesheets must be included before custom properties.
+		add_filter( 'block_editor_settings', [ $this, 'filter_block_editor_settings_custom_properties_fonts' ] );
 		add_action( 'wp_head', [ $this, 'action_print_css_custom_properties_colors' ], 8 );
 		add_action( 'customize_register', [ $this, 'action_customize_register' ] );
 	}
@@ -51,6 +52,23 @@ class Colors {
 		}
 
 		return $editor_color_palette;
+	}
+
+	/**
+	 * Filters the settings to pass to the block editor for adding color custom properties controlled by the Customizer.
+	 *
+	 * @param array $editor_settings Editor settings.
+	 * @return array Filtered value of $editor_settings.
+	 */
+	public function filter_block_editor_settings_custom_properties_colors( array $editor_settings ) {
+		ob_start();
+		$this->print_css_custom_properties_colors();
+
+		$editor_settings['styles'][] = [
+			'css' => ob_get_clean(),
+		];
+
+		return $editor_settings;
 	}
 
 	/**
