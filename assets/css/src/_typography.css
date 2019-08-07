@@ -50,7 +50,8 @@ q {
 }
 
 blockquote {
-	border-left: 4px solid var(--color-quote-border);
+	border-left: 4px solid;
+	border-left-color: var(--highlight-font-color);
 	margin: 0;
 }
 
@@ -67,7 +68,7 @@ blockquote {
 }
 
 blockquote cite {
-	color: var(--color-quote-citation);
+	color: var(--highlight-font-color);
 	font-size: 13px;
 	margin-top: 1em;
 	position: relative;

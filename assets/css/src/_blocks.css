@@ -88,13 +88,13 @@
 }
 
 .wp-block-quote:not(.is-large):not(.is-style-large) {
-	border-left-color: var(--color-quote-border);
+	border-left-color: var(--highlight-font-color);
 }
 
 .wp-block-quote__citation,
 .wp-block-quote cite,
 .wp-block-quote footer {
-	border-left-color: var(--color-quote-citation);
+	border-left-color: var(--global-border-color);
 }
 
 /*--------------------------------------------------------------
