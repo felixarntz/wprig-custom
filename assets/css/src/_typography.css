@@ -82,6 +82,7 @@ address {
 /* stylelint-disable */
 pre {
 	background: var(--global-background-color-alt);
+	color: var(--global-font-color);
 	font-family: "Courier 10 Pitch", Courier, monospace;
 	font-size: 0.9375rem;
 	line-height: 1.6;
