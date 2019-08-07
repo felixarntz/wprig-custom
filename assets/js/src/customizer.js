@@ -39,6 +39,7 @@
 		} );
 	} );
 
+	// Custom 'post_instance' partial type.
 	if ( wp.customize.selectiveRefresh ) {
 		function findParent( element, selector ) {
 			while ( element && element !== document ) {
