@@ -40,6 +40,13 @@ option {
 	border-radius: inherit;
 }
 
+.editor-block-toolbar button {
+
+	/* This has to be hard-coded as it is a block editor color. */
+	color: #555d66;
+	background: none;
+}
+
 .editor-post-title__input {
 	color: var(--highlight-font-color);
 	font-family: var(--highlight-font-family);
