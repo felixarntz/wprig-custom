@@ -148,6 +148,7 @@ class Theme {
 			new Nav_Menus\Component(),
 			new Sidebars\Component(),
 			new Footer_Widget_Areas\Component(),
+			new Footer_Info\Component(),
 			new Custom_Background\Component(),
 			new Custom_Header\Component(),
 			new Custom_Logo\Component(),
