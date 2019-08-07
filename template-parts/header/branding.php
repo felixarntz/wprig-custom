@@ -13,7 +13,7 @@ namespace WP_Rig\WP_Rig;
 	<?php the_custom_logo(); ?>
 
 	<?php
-	if ( is_front_page() && is_home() ) {
+	if ( is_front_page() && ( is_home() || ! wp_rig()->showing_post_header( get_queried_object_id() ) ) ) {
 		?>
 		<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 		<?php
