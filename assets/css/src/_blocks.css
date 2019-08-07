@@ -140,6 +140,18 @@
 }
 
 /*--------------------------------------------------------------
+# Separator Block - overrides core styles
+--------------------------------------------------------------*/
+
+.wp-block-separator {
+	border-bottom-color: var(--global-border-color);
+}
+
+.wp-block-separator.is-style-dots::before {
+	color: var(--global-border-color);
+}
+
+/*--------------------------------------------------------------
 # Table Block - overrides core styles
 --------------------------------------------------------------*/
 
