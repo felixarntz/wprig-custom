@@ -23,7 +23,7 @@ class Colors {
 	public function initialize() {
 		add_filter( 'wprig_editor_color_palette', [ $this, 'filter_wprig_editor_color_palette' ] );
 		add_filter( 'wp_rig_preloading_styles_enabled', '__return_false' ); // Stylesheets must be included before custom properties.
-		add_filter( 'block_editor_settings', [ $this, 'filter_block_editor_settings_custom_properties_fonts' ] );
+		add_filter( 'block_editor_settings', [ $this, 'filter_block_editor_settings_custom_properties_colors' ] );
 		add_action( 'wp_head', [ $this, 'action_print_css_custom_properties_colors' ], 8 );
 		add_action( 'customize_register', [ $this, 'action_customize_register' ] );
 	}
