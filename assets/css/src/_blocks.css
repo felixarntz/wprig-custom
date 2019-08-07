@@ -105,9 +105,12 @@
 .wp-block-pullquote {
 	border-top: 4px solid;
 	border-bottom: 4px solid;
-	border-left: 0;
 	border-color: var(--highlight-font-color);
 	color: var(--global-font-color);
+
+	& blockquote {
+		border-left: 0;
+	}
 }
 
 .wp-block-pullquote__citation,
