@@ -95,6 +95,25 @@
 .wp-block-quote cite,
 .wp-block-quote footer {
 	border-left-color: var(--global-border-color);
+	color: var(--global-font-color);
+}
+
+/*--------------------------------------------------------------
+# Quote Block - overrides core styles
+--------------------------------------------------------------*/
+
+.wp-block-pullquote {
+	border-top: 4px solid;
+	border-bottom: 4px solid;
+	border-left: 0;
+	border-color: var(--highlight-font-color);
+	color: var(--global-font-color);
+}
+
+.wp-block-pullquote__citation,
+.wp-block-pullquote cite,
+.wp-block-pullquote footer {
+	color: var(--global-font-color);
 }
 
 /*--------------------------------------------------------------
