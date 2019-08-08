@@ -25,4 +25,5 @@ The fork contains several additional features which are more opinionated than wh
 * Inline footer menu for additional links
 * CSS colors fully controlled by custom properties
 * Coherent button styles and variations
+* No unnecessary `.site` wrap element as sole child of the `body`
 * [Atomic Blocks](https://wordpress.org/plugins/atomic-blocks/) support

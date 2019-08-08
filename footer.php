@@ -18,7 +18,6 @@ namespace WP_Rig\WP_Rig;
 		<?php get_template_part( 'template-parts/footer/social_navigation' ); ?>
 		<?php get_template_part( 'template-parts/footer/info' ); ?>
 	</footer><!-- #colophon -->
-</div><!-- #page -->
 
 <?php wp_footer(); ?>
 

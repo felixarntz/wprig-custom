@@ -71,15 +71,9 @@
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
-.site {
-	margin: 0 auto;
-	max-width: 100%;
-}
-
 @media (--sidebar-query) {
 
-	.has-sidebar .site {
-		margin: 0 1em;
+	.site.has-sidebar {
 		display: grid;
 		grid-template-columns: 3fr 1fr;
 		grid-gap: 2rem;

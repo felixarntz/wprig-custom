@@ -30,9 +30,8 @@ namespace WP_Rig\WP_Rig;
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class( 'site' ); ?>>
 <?php wp_body_open(); ?>
-<div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'wp-rig' ); ?></a>
 
 	<header id="masthead" class="site-header">
