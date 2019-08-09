@@ -48,7 +48,9 @@ option {
 	background: none;
 }
 
-.editor-block-toolbar button {
+.editor-block-toolbar button,
+.editor-format-toolbar button,
+.components-toolbar button {
 
 	/* This has to be hard-coded as it is a block editor color. */
 	color: #555d66;
