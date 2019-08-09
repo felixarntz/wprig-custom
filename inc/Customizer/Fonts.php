@@ -120,13 +120,18 @@ class Fonts {
 				]
 			);
 
+			$font_choices = $available_fonts;
+			if ( isset( $font_choices[ $font_data['default'] ] ) ) {
+				$font_choices[ $font_data['default'] ] .= ' ' . _x( '(default)', 'font family annotation', 'wp-rig' );
+			}
+
 			$wp_customize->add_control(
 				$font_data['setting'],
 				[
 					'type'    => 'select',
 					'label'   => $font_data['title'],
 					'section' => 'fonts',
-					'choices' => $available_fonts,
+					'choices' => $font_choices,
 				]
 			);
 
