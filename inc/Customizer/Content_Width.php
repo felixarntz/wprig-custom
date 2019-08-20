@@ -105,6 +105,7 @@ class Content_Width {
 			$content_width = 45;
 		}
 
-		echo ':root{--content-width:' . esc_attr( '' . $content_width . 'rem' ) . ';}';
+		// Unfortunately @custom-media is not yet natively supported.
+		echo '@custom-media --content-query screen and (min-width: ' . esc_attr( '' . ( $content_width + 3 ) . 'rem' ) . '); :root{--content-width:' . esc_attr( '' . $content_width . 'rem' ) . ';}';
 	}
 }
