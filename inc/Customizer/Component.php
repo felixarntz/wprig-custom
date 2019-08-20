@@ -36,6 +36,9 @@ class Component implements Component_Interface {
 		add_action( 'customize_register', [ $this, 'action_customize_register' ] );
 		add_action( 'customize_preview_init', [ $this, 'action_enqueue_customize_preview_js' ] );
 
+		$content_width = new Content_Width();
+		$content_width->initialize();
+
 		$colors = new Colors();
 		$colors->initialize();
 
