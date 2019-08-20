@@ -155,6 +155,7 @@ class Theme {
 			new Post_Thumbnails\Component(),
 			new Post_Content\Component(),
 			new Customizer\Component(),
+			new Block_Areas\Component(),
 			new Styles\Component(),
 		];
 

@@ -212,6 +212,10 @@ select {
 .site-header {
 	margin: 0;
 	padding: 0 0 2em;
+
+	&.entry-content {
+		padding: 0;
+	}
 }
 
 .header-image {
@@ -630,6 +634,10 @@ select {
 	color: var(--highlight-font-color);
 	font-family: var(--highlight-font-family);
 	font-stretch: condensed;
+
+	&.entry-content {
+		padding: 0;
+	}
 }
 
 .site-info {

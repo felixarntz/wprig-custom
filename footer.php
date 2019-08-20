@@ -13,11 +13,23 @@ namespace WP_Rig\WP_Rig;
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<?php get_template_part( 'template-parts/footer/widget_areas' ); ?>
-		<?php get_template_part( 'template-parts/footer/social_navigation' ); ?>
-		<?php get_template_part( 'template-parts/footer/info' ); ?>
-	</footer><!-- #colophon -->
+	<?php
+	if ( wp_rig()->has_block_area( 'footer' ) ) {
+		?>
+		<footer id="colophon" class="site-footer entry-content">
+			<?php wp_rig()->render_block_area( 'footer' ); ?>
+		</footer><!-- #colophon -->
+		<?php
+	} else {
+		?>
+		<footer id="colophon" class="site-footer">
+			<?php get_template_part( 'template-parts/footer/widget_areas' ); ?>
+			<?php get_template_part( 'template-parts/footer/social_navigation' ); ?>
+			<?php get_template_part( 'template-parts/footer/info' ); ?>
+		</footer><!-- #colophon -->
+		<?php
+	}
+	?>
 
 <?php wp_footer(); ?>
 
