@@ -69,9 +69,15 @@
 	margin: 0 0 1.5em;
 }
 
+.wp-block-group__inner-container {
+	margin: 0 calc((var(--content-width) - 100vw) / 2);
+	width: 100vw;
+}
+
 .page-content > *,
 .entry-content > *,
-.entry-summary > * {
+.entry-summary > *,
+.wp-block-group__inner-container > * {
 	margin-right: auto;
 	margin-left: auto;
 	padding-right: 1.5rem;
@@ -99,6 +105,7 @@
 	.page-content > *,
 	.entry-content > *,
 	.entry-summary > *,
+	.wp-block-group__inner-container > *,
 	.page-header,
 	.entry-header,
 	.entry-footer,
@@ -188,7 +195,8 @@
 
 .page-content > .alignleft,
 .entry-content > .alignleft,
-.entry-summary > .alignleft {
+.entry-summary > .alignleft,
+.wp-block-group__inner-container > .alignleft {
 	margin-left: 1.5rem;
 	padding-left: 0;
 	padding-right: 0;
@@ -196,7 +204,8 @@
 
 .page-content > .alignright,
 .entry-content > .alignright,
-.entry-summary > .alignright {
+.entry-summary > .alignright,
+.wp-block-group__inner-container > .alignright {
 	margin-right: 1.5rem;
 	padding-left: 0;
 	padding-right: 0;
@@ -206,13 +215,15 @@
 
 	.page-content > .alignleft,
 	.entry-content > .alignleft,
-	.entry-summary > .alignleft {
+	.entry-summary > .alignleft,
+	.wp-block-group__inner-container > .alignleft {
 		margin-left: calc((100vw - var(--content-width)) / 2);
 	}
 
 	.page-content > .alignright,
 	.entry-content > .alignright,
-	.entry-summary > .alignright {
+	.entry-summary > .alignright,
+	.wp-block-group__inner-container > .alignright {
 		margin-right: calc((100vw - var(--content-width)) / 2);
 	}
 }
