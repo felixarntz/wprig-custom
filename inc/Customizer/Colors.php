@@ -24,6 +24,7 @@ class Colors {
 		add_filter( 'wprig_editor_color_palette', [ $this, 'filter_wprig_editor_color_palette' ] );
 		add_filter( 'wp_rig_preloading_styles_enabled', '__return_false' ); // Stylesheets must be included before custom properties.
 		add_filter( 'block_editor_settings', [ $this, 'filter_block_editor_settings_custom_properties_colors' ] );
+		add_action( 'after_setup_theme', [ $this, 'action_support_block_editor_dark_scheme' ], 11 );
 		add_action( 'wp_head', [ $this, 'action_print_css_custom_properties_colors' ], 8 );
 		add_action( 'customize_register', [ $this, 'action_customize_register' ] );
 	}
@@ -69,6 +70,25 @@ class Colors {
 		];
 
 		return $editor_settings;
+	}
+
+	/**
+	 * Adds support for Gutenberg's 'dark-editor-style' if necessary.
+	 */
+	public function action_support_block_editor_dark_scheme() {
+		$font_color = get_theme_mod( 'global_font_color', '#333333' );
+
+		// Only add support if the font color is closer to white than to black.
+		$channels  = $this->hex_to_rgb( $font_color );
+		$aggregate = 0;
+		foreach ( $channels as $channel ) {
+			$aggregate += $channel;
+		}
+		if ( $aggregate < 384 ) { // 384 = 256 * 3 / 2
+			return;
+		}
+
+		add_theme_support( 'dark-editor-style' );
 	}
 
 	/**
@@ -147,6 +167,27 @@ class Colors {
 			echo '--' . esc_attr( $color_data['css_property'] ) . ':' . esc_attr( $value ) . ';';
 		}
 		echo '}';
+	}
+
+	/**
+	 * Converts a hex color string into an RGB array.
+	 *
+	 * @param string $color Hex color string.
+	 * @return array RGB color array.
+	 */
+	protected function hex_to_rgb( $color ) {
+		if ( strlen( $color ) === 4 ) {
+			$rgb = str_split( substr( $color, 1 ), 1 );
+			$rgb = array_map(
+				function( $char ) {
+					return $char . $char;
+				},
+				$rgb
+			);
+		} else {
+			$rgb = str_split( substr( $color, 1 ), 2 );
+		}
+		return array_map( 'hexdec', $rgb );
 	}
 
 	/**
